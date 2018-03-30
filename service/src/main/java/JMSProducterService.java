@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import javax.jms.*;
 
 /**
+ * 生产者
+ *
  * Created by rongbin.xie on 2017/8/25.
  */
 @Service
@@ -17,7 +19,7 @@ public class JMSProducterService {
 
         try {
             //通过连接工厂获取连接
-            Connection connection = jMSServiceHelper.createConnection();
+            Connection connection = JMSServiceHelper.createConnection();
             //启动连接
             connection.start();
             //创建session
@@ -41,7 +43,7 @@ public class JMSProducterService {
     /**
      * 发送消息
      *
-     * @param session
+     * @param session 对话
      * @param messageProducer 消息生产者
      * @throws Exception
      */
